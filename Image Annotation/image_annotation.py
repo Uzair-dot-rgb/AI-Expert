@@ -33,7 +33,7 @@ cv2.putText(image, "Region 2", (top_left2[0], top_left2[1] -10), font, 0.7, (255
 cv2.putText(image, "Center 1", (center1_x - 40, center1_y - 10), font, 0.6, (0, 255, 0), 2, cv2.LINE_AA)
 cv2.putText(image, "Center 2", (center2_x - 40, center2_y -10), font, 0.6, (0, 255, 0), 2, cv2.LINE_AA)
 
-arrow_start = (width - 50, 20)
+arrow_start = (20, height - 20)
 arrow_end = (width - 50, height - 20)
 
 cv2.arrowedLine(image, arrow_start, arrow_end, (255, 255, 0), 3, tipLength = 0.05)
