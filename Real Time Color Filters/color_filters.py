@@ -13,15 +13,15 @@ def apply_filter(image, filter_type):
         img[:, :, 0] = 0
         img[:, :, 2] = 0
     elif filter_type == "sobel":
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        sx = cv2.sobel(gray, cv2.CV_64F, 1, 0, ksize = 3)
-        sy = cv2.sobel(gray, cv2.CV_64F, 0, 1, ksize = 3)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        sx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize = 3)
+        sy = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize = 3)
         sob = cv2.bitwise_or(sx.astype(np.uint8), sy.astype(np.uint8))
         img = cv2.cvtColor(sob, cv2.COLOR_GRAY2BGR)
     elif filter_type == "canny":
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         edges = cv2.Canny(gray, 100, 200)
-        img = cv2.cvtColor(edges, cv2.COLOR_GRAY2RGB)
+        img = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
     elif filter_type == "cartoon":
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         gray = cv2.medianBlur(gray, 5)
