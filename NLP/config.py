@@ -1,0 +1,1 @@
+HF_API_KEY = "https://router.huggingface.co/hf-inference/models/{MODEL_ID}"
